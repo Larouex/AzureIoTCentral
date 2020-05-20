@@ -1,0 +1,103 @@
+/*
+  Color Palete
+  --------------------------------------------
+  Ivory Buff      #FFFFF0
+  Eugenia Red     #FF6666
+  Coral Red       #F08080
+  Cossack Green   #228B22
+  Blackboard:     #565656
+  OxBlood:        #76323F
+  Tan:            #C09F80
+  Grain:          #D7CEC7
+  Eggplant:       #49274A
+
+  http://www.html-color-names.com/tan.php
+
+  Tan to Black
+  #d2b48c	
+  #bea37f	
+  #ab9372	
+  #988265	
+  #857259	
+  #72624c	
+  #5f513f	
+  #4c4132	
+  #393126	
+  #262019	
+  #13100c	
+  #000000
+
+  Tan to White
+  #d2b48c	
+  #d6ba96	
+  #dac1a0	
+  #dec8ab	
+  #e2cfb5	
+  #e6d6c0	
+  #eadcca	
+  #eee3d5	
+  #f2eadf	
+  #f6f1ea	
+  #faf8f4	
+  #ffffff
+  
+  Analogous Colors of Tan
+  #d2b48c	
+  #dfcc89	
+  #e9cc90	
+  #e9b690	
+  #dfa189
+
+  Triadic Colors of Tan
+  #d2b48c	
+  #856d4c	
+  #a7d9b4	
+  #785a9f	
+  #685285
+*/
+body {
+  padding-top: 50px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 350px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+  text-align: left;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 350px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 350px;
+}
+
+.nossheader-logo
+{
+  padding-top: 12px;
+	padding-left: 12px;
+}
+
+.nossheader-text
+{
+    position: relative;
+    font-weight: 300;
+    top: -39px;
+    font-size: 210%;
+    color: #666;
+    left: 250px;
+}
