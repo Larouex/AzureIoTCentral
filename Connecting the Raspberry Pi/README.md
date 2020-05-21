@@ -4,6 +4,7 @@
 
 ## Module 01 - Setting up your Raspberry Pi
 [LINK: Module 01 - Setting up your Raspberry Pi](./Module01/README.md)
+[![](http://img.youtube.com/vi/Bb5ookAZsjI/0.jpg)](http://www.youtube.com/watch?v=Bb5ookAZsjI "Module 01 - Setting up your Raspberry Pi")
 
 ## Module 02 - Getting to Know the Raspberry Pi
 [LINK: Module 02 - Getting to Know the Raspberry Pi](./Module02/README.md)

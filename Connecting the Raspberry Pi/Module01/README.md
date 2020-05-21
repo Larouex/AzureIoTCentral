@@ -1,6 +1,8 @@
 # IoT Central Device Training
 ## Module 01 - Setting up your Raspberry Pi
 
+[![](http://img.youtube.com/vi/Bb5ookAZsjI/0.jpg)](http://www.youtube.com/watch?v=Bb5ookAZsjI "Module 01 - Setting up your Raspberry Pi")
+
 ### Configuring the OS for the RPi (Raspbian)
 Our first thing to set up is your Raspbian image on the SD card that you load will into the MicroSD cart slot on the Raspberry Pi.
 
@@ -11,6 +13,8 @@ Our first thing to set up is your Raspbian image on the SD card that you load wi
 * The tool called "balenaEtcher" which is used to copy your Raspbian image onto the formatted SD card. [LINK: balenaEtcher Download Page](https://www.balena.io/etcher/)
 
 * The OS Image for the RPi. We will install the full package named "Raspbian Buster with desktop and recommended software" [LINK: Raspbian Buster Download Page](https://www.raspberrypi.org/downloads/raspbian/)
+
+###### NOTE: balenaEtcher does not require the SD card to be formatted before imaging with Raspbian. I include the process for completeness, but you can skip it if you are so inclined!
 
 #### Now that you have all of that software installed, let's build our SD card for the RPi...
 
