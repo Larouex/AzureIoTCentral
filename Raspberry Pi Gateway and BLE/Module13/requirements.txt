@@ -1,0 +1,7 @@
+pip
+wheel
+setuptools 
+RPi.GPIO
+asyncio
+hmac
+azure.iot.device
