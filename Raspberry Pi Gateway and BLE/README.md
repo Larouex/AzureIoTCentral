@@ -16,9 +16,8 @@
 [LINK: Module 04 - Setting up the Bluetooth Low Energy Nano Devices](./Module04/README.md)
 
 ### Nano BLE Device Overview
+This video take you through the details of the components used in our Arduino Nano BLE Devices that connect to our Gateway
 [![](http://img.youtube.com/vi/YkSDvi072hE/0.jpg)](http://www.youtube.com/watch?v=YkSDvi072hE "Arduino Nano BLE Device Overview (Azure IoT Central Gateway Series)")
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YkSDvi072hE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Module 05 - Connecting the BLE Nano Devices
 [LINK: Module 05 -Connecting the BLE Nano Devices](./Module05/README.md)
