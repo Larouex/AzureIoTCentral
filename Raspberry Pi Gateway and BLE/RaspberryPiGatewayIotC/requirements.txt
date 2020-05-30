@@ -1,0 +1,14 @@
+pip
+wheel
+setuptools 
+virtualenv
+kivy
+docutils 
+pygments
+Cython==0.29.10
+pillow
+wifi
+RPI.GPIO
+asyncio
+hmac
+azure.iot.device

@@ -1,5 +1,7 @@
-# IoT Central Device Training
-## Module 03 - Setting up your Development Toolchain
+# Raspberry Pi Gateway and Arduino Nano BLE Devices for Azure Iot Central
+## Module 03 - Setting up your Development Toolchain (Local Machine)
+
+# Your Local Machine
 
 ### Install Git
 Git is the tool we use for version control and management of software assets. Our workshop will use it to clone the modules and also to save anything if you want

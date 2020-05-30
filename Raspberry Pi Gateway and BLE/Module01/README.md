@@ -1,4 +1,4 @@
-# IoT Central Device Training
+# Raspberry Pi Gateway and Arduino Nano BLE Devices for Azure Iot Central
 ## Module 01 - Setting up your Raspberry Pi
 
 ### Video for Module 01 - Setting up your Raspberry Pi

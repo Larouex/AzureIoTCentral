@@ -1,5 +1,5 @@
 # ![alt text](./Assets/azure_iot_central_super_sml.png "Connecting the Raspberry Pi as a Gateway with BLE Device Clients") 
-# IoT Central Device Training
+# Raspberry Pi Gateway and Arduino Nano BLE Devices for Azure Iot Central
 
 ![alt text](./Assets/Raspberry-Pi-4-hero-shot-removebg.png "Hero Shot")
 
@@ -14,6 +14,11 @@
 
 ## Module 04 - Setting up the Bluetooth Low Energy Nano Devices
 [LINK: Module 04 - Setting up the Bluetooth Low Energy Nano Devices](./Module04/README.md)
+
+### Nano BLE Device Overview
+[![](http://img.youtube.com/vi/YkSDvi072hE/0.jpg)](http://www.youtube.com/watch?v=YkSDvi072hE "Arduino Nano BLE Device Overview (Azure IoT Central Gateway Series)")
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YkSDvi072hE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Module 05 - Connecting the BLE Nano Devices
 [LINK: Module 05 -Connecting the BLE Nano Devices](./Module05/README.md)
