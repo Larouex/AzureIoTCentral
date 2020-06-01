@@ -19,3 +19,7 @@ FEATURES
 * Portable
 
 [![](http://img.youtube.com/vi/YkSDvi072hE/0.jpg)](http://www.youtube.com/watch?v=YkSDvi072hE "Arduino Nano BLE Device Overview (Azure IoT Central Gateway Series)")
+
+## Arduino Nano BLE Pinout
+
+![alt text](../Assets/nano33blepinout.png "Nano BLE Pinout")
