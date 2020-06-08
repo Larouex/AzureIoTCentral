@@ -7,6 +7,13 @@
 [LINK: Module 01 - Setting up your Raspberry Pi](./Module01/README.md)
 
 ## Module 02 - Setting up your Development Toolchain
+
+![alt text](./Assets/visualstudio_code-card.png "Visual Studio Code")
+
+![alt text](./Assets/vs-code-python-sml.png "VS Code Python")
+
+![alt text](./Assets/vs-code-platformio-sml.png "VS Code PlatformIO")
+
 [LINK: Module 02 - Setting up your Development Toolchain](./Module02/README.md)
 
 ## Module 03 - Developing the Raspberry Pi as a Gateway
