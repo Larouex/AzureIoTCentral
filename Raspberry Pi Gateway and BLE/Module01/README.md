@@ -108,4 +108,4 @@ This is a “logical” eject - meaning it closes files and preps the SD card fo
 
 ![alt text](../Assets/pi-sd.png "Pi SD Card Insert") 
 
-## [NEXT: Module 02 - Getting to Know the Raspberry Pi](../Module02/README.md)
+## [NEXT: Module 02 - Setting up your Development Toolchain](../Module02/README.md)

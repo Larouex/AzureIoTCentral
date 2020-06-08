@@ -27,6 +27,11 @@ PlatformIO is a cross-platform, cross-architecture, multiple framework, professi
 
 [LINK: PlatformIO Homepage](https://platformio.org/)
 
+### Install Arduino IDE and Libraries
+We will not be using the Arduino IDE directly in our project, but we do have dependencies on libraries and SDK's bits that get installed with the Arduino package. Install the complete Arduino IDE for your operating system.
+
+[LINK: Arduino Download Page](https://www.arduino.cc/en/Main/Software)
+
 ### Install Python
 Pyhon is the language we will use to build applications for the Raspberry Pi.
 
@@ -52,7 +57,7 @@ On Windows (from a CMD window or Powershell):
 ```
 
 ### Install all the Tools for Visual Studio Code
-These are a set of tools we will use to develop our apps on the Raspberry Pi. You can open the Extensions sidebar with "Shift+Ctrl+X) or click the icon in the side navigator bar.
+These are a set of tools we will use to develop our apps on the Raspberry Pi. You can open the Extensions sidebar with "Shift+Ctrl+X) or click the icon in the side navigator bar. Type the name of the extension and confirm you have it installed and it not, clock the "install" button for the software.
 
 ![alt text](../Assets/vs-code-python.png "VS Code Python")
 
