@@ -1,246 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="HackinMakin with Larry W Jordan Jr">
-    <meta name="title" content="HackinMakin on Azure IoT Central">
-    <link rel="shortcut icon" href="https://www.hackingmakin.com/saluminator.ico">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>HackinMakin Featuring Azure IoT Central</title>
+    <title>Hackin Makin with Larouex</title>
+    <meta content="" name="descriptison" />
+    <meta content="" name="keywords" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
-
-    <div class="masthead">
-      <div class="container">
-        <div class="logo col-xs-6">
-          <a href="/"><img src="images/HackinMakinHeader2.png" /></a>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+      <div class="hero-container">
+        <a href="index.html" class="hero-logo" data-aos="zoom-in"></a>
+        <div class="container">
+          <div class="row text-center">
+              <div class="col-md-12">
+                <img src="./Assets/Img/azure_iot_central-removebg.png" height="200" alt="step 1" class="img-responsive rounded">
+              </div>
+          </div>
         </div>
-        <div class="powered col-xs-6">
-          <a href="https://azure.microsoft.com/en-us/services/iot-central/">
-            <img src="images/azure_iot_central_sml-removebg.png" />
-            <p>AZURE IOT CENTRAL</p>
+      </a>
+        <h1 data-aos="zoom-in">
+          Projects and Training for Azure Iot Central
+        </h1>
+        <h2 data-aos="fade-up">
+          Hackin Makin for Azure IoT Central with LARRY W JORDAN JR
+        </h2>
+        <a data-aos="fade-up" href="#projects" class="btn-get-started scrollto"
+          >Check out the Project and Training</a
+        >
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+      <div class="container">
+        <div class="logo d-block d-lg-none">
+          <a href="https://www.hackinmakin.com">
+            <img src="../Assets/img/logo.png" alt="" class="img-fluid"/>
           </a>
         </div>
-      </div>
-    </div>
 
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <div class="container">
-            <div class="carousel-caption">
-              <div class="col-md-8">
-                <h2>Getting Started with Azure IoT Central</h2>
-                <h3>How can you get started quickly?</h3>
-                <hr/>
-                <p>We recognize that there is a lot to learn when you want to build an application, design your device software and get connected.</p>
-              </div>
-              <div class="col-md-4">
-                <div class="carousel-image">
-                  <img src="images/carousel/arch-diag.0db4c2a8.svg" width="450" title="Optimized for your industry, integrated with your business">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-              <div class="col-md-8">
-                <h2>Customizing your Branding in Azure Iot Central Application</h2>
-                <h3>Project your Brand in your IoT Central Application</h3>
-                <hr/>
-                <p>We walk you through how easy it is to configure your colors and branding for an IoT Central application.</p>
-              <p><a href="https://youtu.be/z_xGwrUrSwM">Check it out on our HackinMakin YouTube Channel</a></p>
-              </div>
-              <div class="col-md-4">
-                <div class="embed-responsive embed-responsive-16by9 carousel-image">
-                  <iframe width="1136" height="639" src="https://www.youtube.com/embed/z_xGwrUrSwM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-              <div class="col-md-8">
-                <h2>Module 01 - Setting up your Raspberry Pi</h2>
-                <h3>IoT Central Device Training</h3>
-                <hr/>
-                <p>Module 01 - Setting up your Raspberry Pi - We cover software, setting up you SD card with Raspbian, configuring SSH and Wifi and booting!</p>
-              <p><a href="https://youtu.be/z_xGwrUrSwM">Check it out on our HackinMakin YouTube Channel</a></p>
-              </div>
-              <div class="col-md-4">
-                <div class="embed-responsive embed-responsive-16by9 carousel-image">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/Bb5ookAZsjI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-              <div class="col-md-8">
-                <h2>Connecting the Raspberry Pi to Azure Iot Central</h2>
-                <h3>End to End Training Modules</h3>
-                <hr/>
-                <p>We have put together a complete end to end training set of modules for you to understand the following...</p>
-                <ul>
-                  <li>Modules 01-05 - Setting and Configuring up your Raspberry Pi</li>
-                  <li>Modules 06-08 - Breadboarding and Sensors</li>
-                  <li>Modules 09-14 - Overview of Azure IoT Central and Getting Connected</li>
-                  <li>Modules 12-17 - Integrations and Data Export</li>
-              </ul>
-              <p><a href="https://github.com/Larouex/AzureIoTCentral/blob/master/Connecting%20the%20Raspberry%20Pi/README.md">Check it out !Connecting the Raspberry Pi to Azure Iot Central</a></p>
-              </div>
-              <div class="col-md-4">
-                <div class="carousel-image">
-                  <img src="images/carousel/RaspberryPiCarousel.png" alt="First Slide Image" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
-
-    <!-- Introductions -->
-    <div class="callout">
-      <div class="container">
-          <div class="col-xs-14">
-            <h1><span style="color:#ea2a2e;">Azure </span> - The World's Computer - IoT Central</h1>
-            <hr/>
-            <p><span style="color:#000000;">
-              Welcome to the HackinMakin site. We have collected resources here to help you as an Device Developer, 
-              IoT Enthusiast and general DIY resources to help you get connected and enable rich scenarios using 
-              IoT Central on Azure, the World's Computer.
-            </span></p>
-          </div>
-      </div>
-    </div>
-
-    <div class="container marketing">
-
-     <!-- START THE FEATURETTES -->
-
-    <div class="col-sm-12">
-
-      <div class="row featurette">
-        <div class="col-sm-4">
-          <img class="featurette-image img-responsive center-block" src="images/azure_iot_central-removebg.png" alt="Generic placeholder image 1">
-        </div>
-        <div class="col-sm-8">
-          <h2 class="featurette-heading"><a class="nostyle" name="big-data">Getting Started with Azure IoT Central</a></h2>
-          <h3>We guide you to resources to get up to speed on Azure IoT Central</h3>
-          <p class="lead">
-            <p>
-              Azure IoT Central is an IoT application platform that reduces the burden and cost of developing, managing, and maintaining enterprise-grade IoT solutions.
-              Azure IoT Edge is a fully managed service that delivers cloud intelligence locally by deploying and running...
-              <br>
+        <nav class="nav-menu d-none d-lg-block">
+          <ul class="nav-inner">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="drop-down">
+              <a href="">Modules</a>
               <ul>
-                <li>Custom Logic</li>
-                <li>Azure Services</li>
-                <li>Azure Stream Analytics</li>
-                <li>Azure Functions</li>
-                <li>Azure Machine Learning</li>
-                <li>Azure Cognitive Services</li>
-                <li>Azure Event Grid</li>
-                <li>Artificial Intelligence (AI) directly on cross-platform IoT devices. Run your IoT solution securely and at scale—whether in the cloud or offline.</li>
+                <li><a href="./Raspberry%20Pi%20Gateway%20and%20BLE/index.html">Raspberry Pi Gateway and Arduino Nano BLE Devices for Azure Iot Central</a></li>
+                <li><a href="./Connecting%20the%20Raspberry%20Pi/index.html">Connecting the Raspberry Pi to IoT Central</a></li>
               </ul>
-            </span></p>
+            </li>
+
+            <li class="nav-logo">
+              <a href="index.html"
+                ><img src="assets/img/logo.png" alt="" class="img-fluid"
+              /></a>
+            </li>
+
+            <li><a href="#more">More</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <!-- End Header -->
+    
+    <!-- Start Modules Section -->
+    <section id="projects" class="services">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Projects and Training</h2>
+          <p>
+            
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up">
+              <a href="./Raspberry%20Pi%20Gateway%20and%20BLE/index.html">
+                <i class="bx bx-cube-alt"></i>
+                <h4>Raspberry Pi Gateway and Arduino Nano BLE Devices for Azure Iot Central</h4>
+                <p>
+                  Introduction to the Project and Training
+                </p>
+              </a>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="100">
+              <a href="./Connecting%20the%20Raspberry%20Pi/index.html">
+                <i class="bx bx-cube-alt"></i>
+                <h4>Connecting the Raspberry Pi to IoT Central</h4>
+                <p>
+                  Setting up your Development Toolchain
+                </p>
+              </a>
+            </div>
+          </div>
+          <div
+            class="image col-lg-6 order-1 order-lg-2"
+            style="background-image: url('./Assets/Raspberry-Pi-4-hero-shot.jpg');"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          ></div>
         </div>
       </div>
+    </section>
+    <!-- End Modules Section -->
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-sm-4">
-          <img class="featurette-image img-responsive center-block" src="images/front-icons/build-delivery.png" alt="Generic placeholder image 1">
-        </div>
-        <div class="col-sm-8">
-          <h2 class="featurette-heading"><a class="nostyle" name="build-and-delivery-tools">Build Devices for Azure IoT</a></h2>
-          <h3>We bring together all of the instructions, add videos and help you target your device scenarios for IoT</h3>
-          <p class="lead">List resources</p>
-          <p class="lead">List videos</p>
-        </div>
+<!-- Start About Section -->
+<main id="main">
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>About Hackin Making</h2>
+        <p>Complete End to End Projects and Training for Azure IoT Central</p>
       </div>
 
-
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="image">
+            <img src="assets/img/larouex-head-shot.png" class="img-fluid" alt="" />
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3">
+            <h3>Welcome to Hackin Mackin for Azure IoT Central</h3>
+            <p>
+              Straight off, I love to make things. I am a coder, a maker, a musician and passionate about old Porsches. My first career 
+              I worked as a trained Escoffier Chef for hotels and private families. These experiences formed a deep appreciation for always 
+              executing on quality, doing the best for the customer and being present in all interactions. The gratification that comes from 
+              making customer’s happy with amazing food and drink sparked a deep understanding of quality and empathy in my approach to all my other pursuits.
+            </p>
+            <p>
+              My passions include food production, sustainable agriculture and clean water for the World. Currently my technical work is in the 
+              Internet of Things focused on the connected products in the physical world and communications with these devices.
+            </p>
+              In the high technology industry I have worked all the roles from coder to GM. I have managed a range of team sizes from smaller, 
+              high performance teams all the way up to larger multi-discipline organizations. I have been right there at the start in many 
+              emerging industries including advanced end to end Web development, Xbox Live Commerce Services, the Xbox One, E-Commerce Retail on the Web, 
+              Supply Chain, microservices and the Internet of Things (IoT).
+            <p>
+              As a leader I am focused on growing people and doing the right thing at the right time for the business. I exert strong principles and values, 
+              but believe in being situationally adaptable to my crews, peers and leadership.
+            </p>
+            <p>
+              <b>Motto:</b> <i>Grow people, be aspirational and push forward with optimism.</i>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /END THE FEATURETTES -->
+  </section>
+  <!-- End About Section -->
 
-    </div><!-- /.container -->
-
-    <!-- FOOTER -->
-
-    <footer>
-      <div class="footer">
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact section-bg">
         <div class="container">
-          <div class="col-md-4">
-            <p class="footer-sub"><strong>Open Source</strong></p>
-            <ul>
-              <li><a href="https://apps.azureiotcentral.com/" target="_blank">AZURE IOT CENTRAL</a></li>
-              <li><a href="#" target="_blank">HACKINMAKIN YOUTUBE CHANNEL</a></li>
-            </ul>
+          <div class="section-title">
+            <h2>Contact</h2>
+            <p>
+              Magnam dolores commodi suscipit eius consequatur ex aliquid fuga
+              eum quidem
+            </p>
           </div>
-          <div class="col-md-4">
-            <p class="footer-sub"><strong>Stay in Touch</strong></p>
-            <ul>
-              <li><a href="#" target="_blank">ITEM 1</a></li>
-              <li><a href="#" target="_blank">ITEM 2</a></li>
-              <li><a href="#" target="_blank">ITEM 3</a></li>
-              <li><a href="#" target="_blank">ITEM 4</a></li>
-            </ul>
+
+          <div class="row">
+            <div class="col-lg-4">
+              <div
+                class="info d-flex flex-column justify-content-center"
+                data-aos="fade-right"
+              >
+                <div class="address">
+                  <i class="icofont-google-map"></i>
+                  <h4>Location:</h4>
+                  <p>A108 Adam Street,<br />New York, NY 535022</p>
+                </div>
+
+                <div class="email">
+                  <i class="icofont-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>info@example.com</p>
+                </div>
+
+                <div class="phone">
+                  <i class="icofont-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+1 5589 55488 55s</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8 mt-5 mt-lg-0">
+              <form
+                action="forms/contact.php"
+                method="post"
+                role="form"
+                class="php-email-form"
+                data-aos="fade-left"
+              >
+                <div class="form-row">
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      data-rule="minlen:4"
+                      data-msg="Please enter at least 4 chars"
+                    />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      data-rule="email"
+                      data-msg="Please enter a valid email"
+                    />
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    data-rule="minlen:4"
+                    data-msg="Please enter at least 8 chars of subject"
+                  />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="5"
+                    data-rule="required"
+                    data-msg="Please write something for us"
+                    placeholder="Message"
+                  ></textarea>
+                  <div class="validate"></div>
+                </div>
+                <div class="mb-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Your message has been sent. Thank you!
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="powered-by-copyright col-md-4">
-            <a href="/"><img src="images/HackinMakin-Small.png" /></a>
-            <p style="clear:both;">&copy; 2001-2020 LAROUEX SOFTWARE DESIGN LLC. ALL RIGHTS RESERVED</p>
+        </div>
+      </section>
+      <!-- End Contact Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <h3>Hackin Makin with Larouex </h3>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.facebook.com/larryj" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/larrywjordanjr/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
           </div>
         </div>
       </div>
-    </footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="./Assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./Assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="./Assets/vendor/php-email-form/validate.js"></script>
+    <script src="./Assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="./Assets/vendor/venobox/venobox.min.js"></script>
+    <script src="./Assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="./Assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="./Assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="./Assets/js/main.js"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@
 ## Module 03 - Setting up your Development Toolchain (Local Machine)
 
 # Your Local Machine
-The development "toolchain" refers to all of the various tools, SDK's and bits we need to install on your machine to facilitate a smooth experience developing our BLE devices and the Raspberry Pi Gateway device. Our main development tool will be Visual Studio code. It has dependancies on tools from Arduino and other open source projects, but it will be the central place where all our development will occur making it easy to follow along regardless of which operating system you are working on.
+The development "toolchain" refers to all of the various tools, SDK's and bits we need to install on your machine to facilitate a smooth experience developing our BLE devices and the Raspberry Pi Gateway device. Our main development tool will be Visual Studio code. It has dependencies on tools from Arduino and other open source projects, but it will be the central place where all our development will occur making it easy to follow along regardless of which operating system you are working on.
 
 ### Install Git
 Git is the tool we use for version control and management of software assets. Our workshop will use it to clone the modules and also to publish anything you may want to share with others. Git is usually installed already and you can check if you have the latest by opening a terminal or command window and typing...

@@ -3,6 +3,8 @@
 
 ![alt text](./Assets/Raspberry-Pi-4-hero-shot-removebg.png "Hero Shot")
 
+Welcome to the 
+
 ## Module 01 - Setting up your Raspberry Pi and Configuring
 [LINK: Module 01 - Setting up your Raspberry Pi](./Module01/README.md)
 
