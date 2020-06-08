@@ -46,10 +46,10 @@ from azure.iot.device import Message
 from azure.iot.device import MethodResponse
 
 # user configurable values
-id_scope = "0ne000F5E62"
-device_id = "larryj-cas-test-02"
-group_symmetric_key = "Vt1wqs2V97vAVjHmWTApsv+lJXwu+mzFqDTbaQPYHdFsgEIBNOuvxB/L5cNGGzmBMyjIhGjMxp+C956YanQDFQ=="
-model_identity = "urn:verizon:larrycastemplate:1"
+id_scope = ""
+device_id = ""
+group_symmetric_key = ""
+model_identity = ""
 use_websockets = True
 
 # global counter
