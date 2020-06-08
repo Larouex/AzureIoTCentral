@@ -12,8 +12,8 @@
 ## Module 03 - Developing the Raspberry Pi as a Gateway
 [LINK: Module 03 - Developing the Raspberry Pi as a Gateway](./Module03/README.md)
 
-## Module 04 - Setting up the Bluetooth Low Energy Nano Devices
-[LINK: Module 04 - Setting up the Bluetooth Low Energy Nano Devices](./Module04/README.md)
+## Module 04 - Nano BLE Device Overview, Setup and Connecting
+[LINK: Module 04 - Nano BLE Device Overview, Setup and Connecting](./Module04/README.md)
 
 ### Nano BLE Device Overview
 This video guides you through the details of the components (BOM) used in our Arduino Nano BLE Devices that connect to our Gateway.

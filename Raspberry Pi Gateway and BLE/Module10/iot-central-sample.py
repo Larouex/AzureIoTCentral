@@ -46,11 +46,14 @@ from azure.iot.device import Message
 from azure.iot.device import MethodResponse
 
 # user configurable values
-id_scope = "[application scope id]"
-device_id = "[device id]"
-group_symmetric_key = "[group symmetric key]"
-model_identity = "[device template identity]"
+id_scope = "0ne000F5E62"
+device_id = "larryj-cas-test-02"
+group_symmetric_key = "Vt1wqs2V97vAVjHmWTApsv+lJXwu+mzFqDTbaQPYHdFsgEIBNOuvxB/L5cNGGzmBMyjIhGjMxp+C956YanQDFQ=="
+model_identity = "urn:verizon:larrycastemplate:1"
 use_websockets = True
+
+# global counter
+req_id = 1
 
 # global variable declarations
 provisioning_host = "global.azure-devices-provisioning.net"
@@ -83,11 +86,17 @@ def read_dps_cache_from_file():
 # coroutine that sends telemetry on a set frequency until terminated
 async def send_telemetry(device_client, send_frequency):
     while not terminate:
-        payload = '{"temp": %f, "humidity": %f}' % (random.randrange(60.0, 95.0), random.randrange(10.0, 100.0))
-        print("sending message: %s" % (payload))
+        global req_id
+        payload = '{"cas_id": "%s", "req_id": %i, "cas_status": "%s"}' % (device_id, req_id, 'CAS_UPDATE_SUCCESSFUL')
+        #payload = '{"cas_id": "a", "req_id": 1, "cas_status": "CAS_UPDATE_SUCCESSFUL"}' % (device_id, req_id, "CAS_UPDATE_SUCCESSFUL")
+        print("Sending Telemetry Message: %s" % (payload))
         msg = Message(payload)
-        await device_client.send_message(msg)
-        print("completed sending message")
+        try:
+            await device_client.send_message(msg)
+        except:
+            print("Telemetry Error")
+        print("Completed Sending Telemetry Message")
+        req_id += 1
         await asyncio.sleep(send_frequency)
 
 
@@ -102,9 +111,13 @@ async def send_reportedProperty(device_client, key, dataType, send_frequency):
         elif dataType == "string":
             value = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(32)])
         reported_payload = {key: {"value": value}}
+        reported_payload2 = {"full_name": { "value": {"first_name": "Larry","last_name": "Jordan"}}}
         print(reported_payload)
+        print(reported_payload2)
         try:
             await device_client.patch_twin_reported_properties(reported_payload)
+            await asyncio.sleep(10)
+            await device_client.patch_twin_reported_properties(reported_payload2)
         except:
             print("error")
         await asyncio.sleep(send_frequency)
@@ -224,6 +237,7 @@ async def main():
     #awit the tasks ending before exiting
     try:
         await asyncio.gather(twin_listener, direct_method_listener, telemetry_loop, reported_loop1, reported_loop2, reported_loop3) 
+
     except asyncio.CancelledError:
         pass # ignore the cancel actions on twin_listener and direct_method_listener
 

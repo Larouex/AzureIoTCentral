@@ -48,18 +48,36 @@ BLEByteCharacteristic telemetryFrequencyCharacteristic(telemetryServiceId, BLERe
 */
 void SetBatteryColor(int red_light_value, int green_light_value, int blue_light_value)
  {
+  Serial.print("Red: ");
+  Serial.println(red_light_value);
   analogWrite(red_light_pin, red_light_value);
+
+  Serial.print("Green: ");
+  Serial.println(green_light_value);
   analogWrite(green_light_pin, green_light_value);
+
+  Serial.print("Blue: ");
+  Serial.println(blue_light_value);
   analogWrite(blue_light_pin, blue_light_value);
   return;
 }
 
-void BatteryCheck() {
-  SetBatteryColor(255, 0, 0); // Red
-  delay(1000);
-  SetBatteryColor(0, 255, 0); // Green
-  delay(1000);
-  SetBatteryColor(255, 255, 102); // Yellow
+void BatteryCheck(int level) {
+  if (level >=8 )
+  {
+    Serial.println("BatteryCheck Set Green");
+    SetBatteryColor(0, 255, 0); // Green
+  }
+  else if (level >=5 and level <= 7 )
+  {
+    Serial.println("BatteryCheck Set Yellow");
+    SetBatteryColor(255, 255, 102); // Yellow
+  }
+  else
+  {
+    Serial.println("BatteryCheck Set Red");
+    SetBatteryColor(255, 0, 0); // Red
+  }
   return;
 }
 
@@ -75,9 +93,9 @@ void UpdateBatteryLevel() {
     Serial.println(batteryLevel);
     batteryCharacteristic.writeValue(batteryLevel);  // and update the battery level characteristic
     oldBatteryLevel = batteryLevel;           // save the level for next comparison
+    BatteryCheck(batteryLevel);
   }
 
-  BatteryCheck();
 }
 
 void blePeripheralConnectHandler(BLEDevice central) {
@@ -116,20 +134,9 @@ void setup() {
   Serial.begin(9600);    // initialize serial communication
   while (!Serial);
 
-  SetBatteryColor(0, 0, 255); // Blue
-  delay(1000);
-
   // begin initialization
   if (!BLE.begin()) {
-    
-    SetBatteryColor(255, 0, 0); // Red
-    delay(1000);
-
     Serial.println("starting BLE failed!");
-
-    SetBatteryColor(0, 0, 255); // Blue
-    delay(1000);
-
     while (1);
   }
 
@@ -139,7 +146,8 @@ void setup() {
     and can be used by remote devices to identify this BLE device
     The name can be changed but maybe be truncated based on space left in advertisement packet
   */
-  BLE.setLocalName("Larouex BLE IoT Central");
+  BLE.setLocalName("Larouex BLE Device");
+  BLE.setDeviceName("Larouex BLE - IoT Central");
 
   // add the battery service
   BLE.setAdvertisedService(batteryService); // add the service UUID
@@ -166,11 +174,10 @@ void setup() {
   /* Start advertising BLE.  It will start continuously transmitting BLE
      advertising packets and will be visible to remote BLE central devices
      until it receives a new connection */
-
-  // start advertising
   BLE.advertise();
 
   Serial.println("Bluetooth device active, waiting for connections...");
+  SetBatteryColor(0, 0, 255); // Blue
 }
 
 void loop() {
@@ -179,11 +186,10 @@ void loop() {
 
   if (connected) {
       long currentMillis = millis();
-      if (currentMillis - previousMillis >= 200) {
+      if (currentMillis - previousMillis >= 500) {
         previousMillis = currentMillis;
         UpdateBatteryLevel();
       }
-    BatteryCheck();
   }
 }
 
