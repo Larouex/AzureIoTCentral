@@ -1,7 +1,7 @@
 # Raspberry Pi Gateway and Arduino Nano BLE Devices for Azure Iot Central
 ## Nano BLE Device Overview, Setup and Connecting
 
-Overview of the Arduino Nano BLE Device for our Gateway.
+Overview of the Arduino Nano BLE Device for our Gateway
 
 BLE DEVICE BOM
 -----------------------------------
