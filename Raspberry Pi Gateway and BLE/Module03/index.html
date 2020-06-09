@@ -97,13 +97,37 @@
       
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <h4>Introducing the Arduino Nano BLE 33</h4>
+          <h4>Introducing the Client Boards</h4>
           <img src="../../Assets/nano-ble-33.jpg" height="250" alt="step 1" class="img-responsive rounded">
           <p>
-            We will be creating our client nodes for our Gateway using the Arduino Nano BLE 33. The Arduino Nano 33 BLE is a completely new 
-            board on a well-known form factor. It comes with an embedded 9 axis inertial sensor what makes this board ideal for wearable 
-            devices, but also for a large range of scientific experiments in the need of short-distance wireless communication.
+            We will be creating our client nodes for our Gateway using three recent boards fromo Arduino.
+            
+            <ul>
+              <li>
+                <b>Nano BLE 33</b> - The Arduino Nano 33 BLE is a completely new board on a well-known form factor. It comes with an embedded 
+                  9 axis inertial sensor what makes this board ideal for wearable devices, but also for a large range of scientific experiments
+                  in the need of short-distance wireless communication.
+              </li>
+              <li><b>Nano BLE Sense 33</b> - The Arduino Nano 33 BLE Sense is a completely new board on a well-known form factor. It comes with a series of embedded sensors:
+                9 axis inertial sensor: what makes this board ideal for wearable devices. Humidity, and temperature sensor: to get highly accurate measurements of the environmental conditions
+                barometric sensor: you could make a simple weather station microphone: to capture and analyse sound in real time
+                gesture, proximity, light color and light intensity sensor : estimate the room’s luminosity, but also whether someone is moving close to the board
+              </li>
+              <li><b>Nano IoT 33</b> - The Arduino Nano 33 IoT is the easiest and cheapest point of entry to enhance existing devices (and creating new ones) 
+                to be part of the IoT and designing pico-network applications. Whether you are looking at building a sensor network connected to your office or 
+                home router, or if you want to create a BLE device sending data to a cellphone, the Nano 33 IoT is your one-stop-solution for many of the basic IoT 
+                application scenarios. The board's main processor is a low power Arm® Cortex®-M0 32-bit SAMD21. The WiFi and Bluetooth® connectivity is performed with a 
+                module from u-blox, the NINA-W10, a low power chipset operating in the 2.4GHz range. On top of those, secure communication is ensured through the 
+                Microchip® ECC608 crypto chip. Besides that, you can find a 6 axis IMU, what makes this board perfect for simple vibration alarm systems, pedometers, relative positioning of robots, etc.
+              </li>
+            </ul>
           </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h4>Introducing the Arduino Nano 33 BLE</h4>
+          <img src="../../Assets/nano-ble-33.jpg" height="250" alt="step 1" class="img-responsive rounded">
           <p>
             The Arduino Nano 33 BLE is an evolution of the traditional Arduino Nano, but featuring a lot more powerful processor, the 
             nRF52840 from Nordic Semiconductors, a 32-bit ARM® Cortex™-M4 CPU running at 64 MHz. This will allow you to make larger programs 
@@ -117,46 +141,26 @@
             The communications chipset on the Nano 33 BLE can be both a BLE and Bluetooth® client and host device. Something pretty unique in the world of 
             microcontroller platforms. If you want to see how easy it is to create a Bluetooth® central or a peripheral device.
           </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
           <h6><b>BLE DEVICE BOM</b></h6>
           <p>
-            Below is the list of components we will be using to construct our IoT BLE Devices. We will be hosting the
-            boards in a single enclosure and then attaching three DHT22 Temperature and Humidity sensors for measuring zones.
+            Below is the list of components we will be using to prototype our IoT BLE Devices.
           </p>
           <hr />
           <p>
             <ul>
-              <li>Arduino Nano 33 BLE</li>
+              <li>Arduino Nano (Sense, IoT, BLW) 33</li>
               <li>Makefun Nano Adaptor</li>
               <li>MakerFocus 1000 mAh Battery and Battery Charging Module</li>
-              <li>DHT22 Temperature and Humidity Sensor</li>
               <li>RGB Led Indicator</li>
               <li>DPDT Momentary Switch</li>
-              <li>Project Case CNC'd</li>
             </ul>
-
             <br />
-
-            <h6><b>FEATURES</b></h6>
-            <p>
-              Below is our capability features...
-            </p>
-            <hr />
-            <p>
-              <ul>
-                <li>Temperature</li>
-                <li>Humidity</li>
-                <li>Re-Chargeable</li>
-                <li>Portable</li>
-              </ul>
-            </p>
-
-            <p>
-              The short video below walks you through the hardware, features and an overview of the components.
-            </p>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YkSDvi072hE" allowfullscreen></iframe>
-            </div>
-
+          </p>
           <hr/>
         </div>
       </div>
