@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "NanoIoT",
+			"path": "Raspberry Pi Gateway and BLE\\NanoIoT"
+		},
+		{
+			"name": "NanoBLE",
+			"path": "Raspberry Pi Gateway and BLE\\NanoBLE"
+		}
+	],
+	"settings": {}
+}

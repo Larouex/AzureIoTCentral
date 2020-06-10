@@ -1,17 +1,31 @@
-/*
-  Nano BLW For IoT Central 
-  Gateway Connecting
-*/
+/* ==========================================================================
+    File:     main.cpp
+    Author:   Larry W Jordan Jr (larouex@gmail.com)
+    Purpose:  Arduino Nano BLE Sense 33 example for Bluetooth Connectivity
+              to IoT Gateway Device working with Azure IoT Central
+    Online:   www.hackinmakin.com
+
+    (c) 2020 Larouex Software Design LLC
+    This code is licensed under MIT license (see LICENSE.txt for details)    
+  ==========================================================================*/
 #include <Arduino.h>
 #include <ArduinoBLE.h>
+
 #include <string>
-#include <OneWire.h>
-#include <DallasTemperature.h>
+
+// Arduino BLE Sense 33 On Board Sensors
+#include <Arduino_HTS221.h>
+#include <Arduino_LSM9DS1.h>
+#include <Arduino_LPS22HB.h>
 
 #define onboard 13
-#define ONE_WIRE_BUS 2
 
 bool connected = false;
+ 
+/*
+   if (IMU.accelerationAvailable()) {
+    IMU.readAcceleration(x, y, z);
+*/
 
 /* --------------------------------------------------------------------------
     The Values are used when we do a check on the battery charge. The
@@ -19,21 +33,9 @@ bool connected = false;
     charging/voltage regulator is bypassed and the battery is then
     directly connected.
    -------------------------------------------------------------------------- */
-#define red_light_pin 11
-#define green_light_pin 10
-#define blue_light_pin 9
-
-/* --------------------------------------------------------------------------
-    This is he pin we will be reading for the digital input from the DHT22
-    #
-   -------------------------------------------------------------------------- */
-OneWire oneWire(ONE_WIRE_BUS);
-
-// Pass our oneWire reference to Dallas Temperature. 
-DallasTemperature sensors(&oneWire);
-
-// arrays to hold device addresses
-DeviceAddress insideThermometer, outsideThermometer;
+#define RED_LIGHT_PIN 11
+#define GREEN_LIGHT_PIN 10
+#define BLUE_LIGHT_PIN 9
 
 /* --------------------------------------------------------------------------
     Previous Basttery Level Monitors
@@ -58,62 +60,8 @@ BLEByteCharacteristic batteryCharacteristic(batteryServiceId, BLERead);
 BLEService telemetryService(telemetryServiceId); 
 BLEByteCharacteristic telemetryTemperatureCharacteristic(telemetryServiceId, BLERead);
 BLEByteCharacteristic telemetryHumidityCharacteristic(telemetryServiceId, BLERead);
+BLEByteCharacteristic telemetryBarometerCharacteristic(telemetryServiceId, BLERead);
 BLEByteCharacteristic telemetryFrequencyCharacteristic(telemetryServiceId, BLERead | BLEWrite);
-
-// function to print a device address
-void printAddress(DeviceAddress deviceAddress)
-{
-  for (uint8_t i = 0; i < 8; i++)
-  {
-    if (deviceAddress[i] < 16) Serial.print("0");
-    Serial.print(deviceAddress[i], HEX);
-  }
-}
-
-// function to print the temperature for a device
-void printTemperature(DeviceAddress deviceAddress)
-{
-  float tempC = sensors.getTempC(deviceAddress);
-  Serial.print("Temp C: ");
-  Serial.print(tempC);
-  Serial.print(" Temp F: ");
-  Serial.print(DallasTemperature::toFahrenheit(tempC));
-}
-
-void printAlarms(uint8_t deviceAddress[])
-{
-  char temp;
-  temp = sensors.getHighAlarmTemp(deviceAddress);
-  Serial.print("High Alarm: ");
-  Serial.print(temp, DEC);
-  Serial.print("C/");
-  Serial.print(DallasTemperature::toFahrenheit(temp));
-  Serial.print("F | Low Alarm: ");
-  temp = sensors.getLowAlarmTemp(deviceAddress);
-  Serial.print(temp, DEC);
-  Serial.print("C/");
-  Serial.print(DallasTemperature::toFahrenheit(temp));
-  Serial.print("F");
-}
-
-// main function to print information about a device
-void printData(DeviceAddress deviceAddress)
-{
-  Serial.print("Device Address: ");
-  printAddress(deviceAddress);
-  Serial.print(" ");
-  printTemperature(deviceAddress);
-  Serial.println();
-}
-
-void checkAlarm(DeviceAddress deviceAddress)
-{
-  if (sensors.hasAlarm(deviceAddress))
-  {
-    Serial.print("ALARM: ");
-    printData(deviceAddress);
-  }
-}
 
 /* --------------------------------------------------------------------------
     Function to set the RGB LED to the color of the battery charge
@@ -121,20 +69,23 @@ void checkAlarm(DeviceAddress deviceAddress)
       * Yellow <= 49% && >=10%
       * Red <=9%
    -------------------------------------------------------------------------- */
-void SetBatteryColor(int red_light_value, int green_light_value, int blue_light_value)
+void SetBatteryColor(
+  int red_light_value, 
+  int green_light_value, 
+  int blue_light_value)
  {
-  Serial.print("Red: ");
-  Serial.println(red_light_value);
-  analogWrite(red_light_pin, red_light_value);
+    Serial.print("Red: ");
+    Serial.println(red_light_value);
+    analogWrite(RED_LIGHT_PIN, red_light_value);
 
-  Serial.print("Green: ");
-  Serial.println(green_light_value);
-  analogWrite(green_light_pin, green_light_value);
+    Serial.print("Green: ");
+    Serial.println(green_light_value);
+    analogWrite(GREEN_LIGHT_PIN, green_light_value);
 
-  Serial.print("Blue: ");
-  Serial.println(blue_light_value);
-  analogWrite(blue_light_pin, blue_light_value);
-  return;
+    Serial.print("Blue: ");
+    Serial.println(blue_light_value);
+    analogWrite(BLUE_LIGHT_PIN, blue_light_value);
+    return;
 }
 
 void BatteryCheck(int level) {
@@ -176,32 +127,97 @@ void UpdateBatteryLevel() {
 /* --------------------------------------------------------------------------
     Update the telemtry for Temperature
    -------------------------------------------------------------------------- */
-void UpdateTemperature(DeviceAddress deviceAddress) {
+void UpdateTemperature() {
   
-  sensors.requestTemperatures();
-  Serial.print("Temperature is: "); 
-  float temperature = sensors.getTempCByIndex(0);
-  Serial.print("Temperature Read = ");
-  Serial.println(DallasTemperature::toFahrenheit(temperature));
-/*
-  Serial.print("Current Temperature = ");
-  Serial.println(DallasTemperature::toFahrenheit(currentTemperature));
+  // read the sensor value
+  float temperature = HTS.readTemperature();
+  
+  // print the retained value
+  Serial.print("CURRENT Temperature = ");
+  Serial.print(currentTemperature);
+  Serial.println(" °C");
+  Serial.println();
 
-  float temperature = sensors.getTempC(deviceAddress);
-  Serial.print("Temperature Read = ");
-  Serial.println(DallasTemperature::toFahrenheit(temperature));
-
+  // print the sensor value
+  Serial.print("READ Temperature = ");
+  Serial.print(temperature);
+  Serial.println(" °C");
+  Serial.println();
+  
+  // update Temperature and Send to Bluetooth
   if (currentTemperature != temperature)
   {
-    telemetryTemperatureCharacteristic.writeValue(DallasTemperature::toFahrenheit(temperature));
-    Serial.print("Temperature = ");
-    Serial.println(DallasTemperature::toFahrenheit(temperature));
+    telemetryTemperatureCharacteristic.writeValue(temperature);
     currentTemperature = temperature;
   }
-  */
-  delay(telemetryFrequency);
+
 }
 
+/* --------------------------------------------------------------------------
+    Update the telemtry for Humidity
+   -------------------------------------------------------------------------- */
+void UpdateHumidity() {
+  
+  // read the sensor value
+  float humidity = HTS.readHumidity();  
+  
+  // print retained values
+  Serial.print("CURRENT Humidity    = ");
+  Serial.print(currentHumidity);
+  Serial.println(" RH%");
+
+  Serial.println();
+
+  // print sensor value
+  Serial.print("READ Humidity    = ");
+  Serial.print(humidity);
+  Serial.println(" RH%");
+  
+  Serial.println();
+
+  // update Humidity and Send to Bluetooth
+  if (currentHumidity != humidity)
+  {
+    telemetryHumidityCharacteristic.writeValue(humidity);
+    currentHumidity = humidity
+  }
+
+}
+
+/* --------------------------------------------------------------------------
+    Update the telemtry for Pressure (Barometer)
+   -------------------------------------------------------------------------- */
+void UpdateBarometer() {
+  
+  // read the sensor value
+  float pressure = BARO.readPressure();
+  
+  // print retained values
+  Serial.print("CURRENT Barometer    = ");
+  Serial.print(currentBarometer);
+  Serial.println(" MLB");
+
+  Serial.println();
+
+  // print sensor value
+  Serial.print("READ Barometer    = ");
+  Serial.print(pressure);
+  Serial.println(" MLB");
+  
+  Serial.println();
+
+  // update Pressure and Send to Bluetooth
+  if (currentBarometer != pressure)
+  {
+    telemetryBaramoterCharacteristic.writeValue(pressure);
+    currentBarometer = humidity
+  }
+
+}
+
+/* --------------------------------------------------------------------------
+    Event Handler for BLE Connection Request
+   -------------------------------------------------------------------------- */
 void blePeripheralConnectHandler(BLEDevice central) {
   // central connected event handler
   Serial.print("Connected event, central: ");
@@ -210,6 +226,9 @@ void blePeripheralConnectHandler(BLEDevice central) {
   connected = true;
 }
 
+/* --------------------------------------------------------------------------
+    Event Handler for BLE DIS-Connection Request
+   -------------------------------------------------------------------------- */
 void blePeripheralDisconnectHandler(BLEDevice central) {
   // central disconnected event handler
   Serial.print("Disconnected event, central: ");
@@ -218,18 +237,24 @@ void blePeripheralDisconnectHandler(BLEDevice central) {
   connected = false;
 }
 
+/* --------------------------------------------------------------------------
+    Event Handler for Telemtery Frequency upadated from Central
+   -------------------------------------------------------------------------- */
 void telemetryFrequencyCharacteristicWritten(BLEDevice central, BLECharacteristic characteristic) {
   // central wrote new value to characteristic, update LED
   Serial.print("Characteristic event, written: ");
   Serial.printf("Telemetery Frequencey %d", telemetryFrequencyCharacteristic.value());
 }
 
+/* --------------------------------------------------------------------------
+    Standard Sketch Setup
+   -------------------------------------------------------------------------- */
 void setup() {
   
   // Setup out battery LED
-  pinMode(red_light_pin, OUTPUT);
-  pinMode(green_light_pin, OUTPUT);
-  pinMode(blue_light_pin, OUTPUT);
+  pinMode(RED_LIGHT_PIN, OUTPUT);
+  pinMode(GREEN_LIGHT_PIN, OUTPUT);
+  pinMode(BLUE_LIGHT_PIN, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(ONE_WIRE_BUS, INPUT_PULLUP);  
 
@@ -239,10 +264,19 @@ void setup() {
   Serial.begin(9600);    // initialize serial communication
   while (!Serial);
   
-  // Start up the library
-  sensors.begin();
-  
-  // begin initialization
+  // Initialize the Temperature and Humidity Sensor
+  if (!HTS.begin()) {
+    Serial.println("Failed to initialize humidity temperature sensor!");
+    while (1);
+  }
+
+  // Initialize the Pressure (Barometer) Sensor
+  if (!BARO.begin()) {
+    Serial.println("Failed to initialize pressure sensor!");
+    while (1);
+  }
+
+  // Initialize the BLE stack
   if (!BLE.begin()) {
     Serial.println("Initializing BLE has Failed!");
     while (1);
@@ -293,6 +327,9 @@ void setup() {
   SetBatteryColor(0, 0, 255); // Blue
 }
 
+/* --------------------------------------------------------------------------
+    Standard Sketch Loo
+   -------------------------------------------------------------------------- */
 void loop() {
 
   BLE.poll();
@@ -304,7 +341,9 @@ void loop() {
         UpdateBatteryLevel();
       }
 
-      UpdateTemperature(insideThermometer);
+      UpdateTemperature();
+      UpdateHumidity();
+      UpdateBarometer();
     }
 }
 
