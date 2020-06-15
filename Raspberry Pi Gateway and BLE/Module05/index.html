@@ -93,78 +93,27 @@
 
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <h3><i class="bx bx-cube-alt"></i>&nbsp;Module 04 - Development of the BLE Device Peripheral Clients</h2>
+          <h3><i class="bx bx-cube-alt"></i>&nbsp;Module 05 - Preparing the Raspberry Pi Gateway Device</h2>
           <hr/>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <h3><b>PlatformIO and Visual Studio Code</b></h3>
+          <h3><b>Configuring the OS for the RPi (Raspbian)</b></h3>
           <p>
-            We installed PlatformIO in <a href="../Module02/index.html">Module 02 - Setting up your Development Toolchain</a> and it tightly
-            integrates into the Visual Studio Code IDE. I certainly appreciate the charms of the Arduino IDE and ease of examples, but I would
-            not go back considering how awesome Visual Studio Code and PlatformIO are together. The combination  provides a set of powerful 
-            features for embedded development... 
+            Our first thing to set up is your Raspbian image on the SD card that you load will into the MicroSD cart slot on the Raspberry Pi.
             <uL>
-              <li>PIO Unified Debugger with a support for the multiple architectures and development platforms that allows you to debug more than 200 embedded boards with Zero-Configuration!</li>
-              <li>Cross-platform build system without external dependencies to the OS software: 800+ embedded boards, 35+ development platforms, 20+ frameworks</li>
-              <li>C/C++ Intelligent Code Completion and Smart Code Linter for rapid professional development</li>
-              <li>Multi-projects workflow with multiple panes and Themes support with dark and light colors</li>
-              <li>Built-in Terminal with PlatformIO Core and powerful Serial Port Monitor</li>
+              <li>The official SD Card Formatter from the SD Association. Install for your OS. <a href="https://www.sdcard.org/downloads/formatter/">SD Card Formatter</a></li>
+              <li>The tool called "balenaEtcher" which is used to copy your Raspbian image onto the formatted SD card. <a href="https://www.balena.io/etcher/">balenaEtcher Download Page</a></li>
+              <li>The OS Image for the RPi. We will install the full package named "Raspbian Buster with desktop and recommended software" <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian Buster Download Page</a></li>
             </uL>
+            <b>NOTE:</b> balenaEtcher does not require the SD card to be formatted before imaging with Raspbian. I include the process for completeness, but you can skip it if you are so inclined!
           </p>
           <hr />
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <h3><b>Clone the Nano Device Repositories</b></h3>
-          <p>
-            We finally get to play with Git and load some code to start to develop with!
-            <br/>
-            Let's start by cloning the Nano Devices, each of which has it's own repository. If you are following along 
-            building all three devices, great clone them all or choose the one you are working with.
-          </p>
-          <h4>Arduino Nano BLE 33 for Azure IoT Central</h4>
-          <p>
-            Check out the Repository and Readme for a full explanation of the device, tools and code...<br/>
-            <a href="https://github.com/Larouex/IoTCNanoBLE33">The Arduino Nano BLE 33 for Azure IoT Central Repository and Readme</a>
-            <br/>
-            <br/>
-            Clone the respository to your machine...
-            <pre>
-            git clone https://github.com/Larouex/IoTCNanoBLE33.git
-            </pre>
-          </p>
-          <hr />
-          <h4>Arduino Nano BLE Sense 33 for Azure IoT Central</h4>
-          <p>
-            Check out the Repository and Readme for a full explanation of the device, tools and code...<br/>
-            <a href="https://github.com/Larouex/IoTCNanoBLESense33">The Arduino Nano BLE Sense 33 for Azure IoT Central Repository and Readme</a>
-            <br/>
-            <br/>
-            Clone the respository to your machine...
-            <pre>
-            git clone https://github.com/Larouex/IoTCNanoBLESense33.git
-            </pre>
-          </p>
-          <hr />
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <h3><b>Let's Build, Deploy and Monitor</b></h3>
-          <p>
-            <img src="../../Assets/vs-code-platformio-build-deploy-monitor.jpg" height="500" alt="step 1" class="img-responsive rounded">
-          </p>
-        </div>
-      </div>
-   
-    </div>
-    <br><br>
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
