@@ -44,7 +44,7 @@
     <header id="header" class="d-flex align-items-center">
       <div class="container">
         <div class="logo d-block d-lg-none">
-          <a href="../index.html">
+          <a href="./index.html">
             <img src="../../Assets/logo.png" alt="" class="img-fluid"/>
           </a>
         </div>
@@ -52,7 +52,7 @@
         <nav class="nav-menu d-none d-lg-block">
           <ul class="nav-inner">
             <li class="active"><a href="../index.html">Home</a></li>
-            <li><a href="https://www.hackinmakin.com#about">About</a></li>
+            <li><a href="../index.html#about">About</a></li>
             <li class="drop-down">
               <a href="">Modules</a>
               <ul>
@@ -61,12 +61,13 @@
                 <li><a href="../Module03/index.html">Module 03 - Overview of the Arduino Nano BLE Devices (BLE Clients)</a></li>
                 <li><a href="../Module04/index.html">Module 04 - Development of the BLE Device Peripheral Clients</a></li>
                 <li><a href="../Module05/index.html">Module 05 - Preparing the Raspberry Pi Gateway Device</a></li>
+                <li><a href="../Module06/index.html">Module 06 - Connected shh to Raspberry Pi Gateway Device and Setting up Python</a></li>
               </ul>
             </li>
 
             <li class="nav-logo">
-              <a href="https://www.hackinmakin.com">
-                <img src="../../Assets/logo.png" alt="" class="img-fluid"/>
+              <a href="https://www.hackinmakin.com"></a>
+              <img src="../../Assets/logo.png" alt="" class="img-fluid"/>
               </a>
             </li>
 
@@ -93,65 +94,51 @@
 
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <h3><i class="bx bx-cube-alt"></i>&nbsp;Module 01 - Introduction to the Project and Training</h2>
+          <h3><i class="bx bx-cube-alt"></i>&nbsp;Module 06 - Connected shh to Raspberry Pi Gateway Device and Setting up Python</h2>
+          <hr/>
         </div>
       </div>
 
-      <!-- Start Module02 -->
       <div class="row">
         <div class="col-md-8 offset-md-2">
+          <h3><b>Configuring the OS for the Raspberry Pi Gateway Device (Raspbian)</b></h3>
           <p>
-            This is a comprehensive end to end project and training.
-          <p>
-            What we will be covering…
+            Previously we configured your Raspberry Pi for your Wireless setup in Module05...
+            <a href="../Module05/index.html">Module 05 - Preparing the Raspberry Pi Gateway Device</a>
+            under the sections...
+              <b>Enable ssh to allow remote login</b><br>
+              <b>Add your WiFi network info</b>
+            <br>
+            The requirment in order to connect to your Pi from your computer can be accomplished via Wireless or with an ethernet cable connected to the RPi ethernet port.  
           </p>
-            <ul>
-              <li>
-                <h4><a href="../Module02/index.html">Module 02 - Setting up your Development Toolchain</a></h4>
-                The development "toolchain" refers to all of the various tools, SDK's and bits we need to install on your machine to facilitate a smooth experience
-                developing our BLE devices and the Raspberry Pi Gateway device. Our main development tool will be Visual Studio code. It has dependencies on tools 
-                from Arduino and other open source projects, but it will be the central place where all our development will occur making it easy to follow along 
-                regardless of which operating system you are working on.
-              </li>
-              <br/>
-              <br/>
-              <li>
-                <h4><a href="../Module03/index.html">Module 03 - Arduino Nano BLE Device - Overview, Setup and Connecting</a></h4>
-                We will be creating our client nodes for our Gateway using the Arduino Nano BLE 33. The Arduino Nano 33 BLE is a completely new 
-                board on a well-known form factor. It comes with an embedded 9 axis inertial sensor what makes this board ideal for wearable 
-                devices, but also for a large range of scientific experiments in the need of short-distance wireless communication.
-              </li>
-              <br/>
-              <br/>
-              <li>
-                <h4><a href="../Module04/index.html">Module 04 - Development of the BLE Device Peripheral Clients</a></h4>
-                In this module we cover the development tools and how to start building our Bluetooth Low Energy "Peripheral Clients"
-                for use in our project.
-              </li>
-              <br/>
-              <br/>
-              <li>
-                <h4><a href="../Module05/index.html">Module 05 - Preparing the Raspberry Pi Gateway Device</a></h4>
-                In this module we prepare the Raspberry Pi Operating System and Configuration for Connectivity from our 
-                development environment.
-              </li>
-              <br/>
-              <br/>
-              <li>
-                <h4><a href="../Module06/index.html">Module 06 - Connected shh to Raspberry Pi Gateway Device and Setting up Python</a></h4>
-                In this module we connect via ssh to the Raspberry Pi and setup our Python development environment.
-              </li>
-            </ul>
+          <hr />
         </div>
       </div>
-      <!-- End Module02 -->
 
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h3><b>Connecting the Pi with a Monitor, Keyboard and Mouse</b></h3>
+          <p>
+            If you boot to the command line instead of the desktop, your IP address should be shown in the last few 
+            messages before the login prompt.
+            <br>
+            Using the terminal (boot to the command line or open a Terminal window from the desktop), simply type ...
+            <br>
+            
+            <pre>
+              hostname -I 
+            </pre>>
+            
+            Which will reveal your Pi's IP address.
+            <br>
+          </p>
+          <hr />
+        </div>
+      </div>
 
+      
     </div>
 
-    <!-- End Modules Section -->
-
-<br><br>
     <!-- ======= Footer ======= -->
     <footer id="footer">
       <div class="footer-top">
@@ -173,10 +160,10 @@
     <!-- End Footer -->
     
     <!-- Topic Navigators -->
-    <a href="../index.html" class="previous-topic"><i class="icofont-simple-left"></i></a>  
+    <a href="../Module04/index.html" class="previous-topic"><i class="icofont-simple-left"></i></a>  
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-    <a href="../Module02/index.html" class="next-topic"><i class="icofont-simple-right"></i></a>
-
+    <a href="../Module06/index.html" class="next-topic"><i class="icofont-simple-right"></i></a>
+    
     <!-- Vendor JS Files -->
     <script src="../../Assets/vendor/jquery/jquery.min.js"></script>
     <script src="../../Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -193,3 +180,5 @@
 
     </body>
 </html>
+
+
