@@ -104,10 +104,16 @@
           <h3><b>Configuring the OS for the Raspberry Pi Gateway Device (Raspbian)</b></h3>
           <p>
             Previously we configured your Raspberry Pi for your Wireless setup in Module05...
+            <br>
+            <br>
             <a href="../Module05/index.html">Module 05 - Preparing the Raspberry Pi Gateway Device</a>
-            under the sections...
-              <b>Enable ssh to allow remote login</b><br>
-              <b>Add your WiFi network info</b>
+            <br>
+            <br>
+            Under the sections...
+            <ul>
+              <li><b></b>Enable ssh to allow remote login</b></li>
+              <li><b>Add your WiFi network info</b></li>
+            </ul>
             <br>
             The requirment in order to connect to your Pi from your computer can be accomplished via Wireless or with an ethernet cable connected to the RPi ethernet port.  
           </p>
@@ -117,25 +123,53 @@
 
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <h3><b>Connecting the Pi with a Monitor, Keyboard and Mouse</b></h3>
+          <h3><b>Connecting with a Monitor, Keyboard and Mouse</b></h3>
           <p>
             If you boot to the command line instead of the desktop, your IP address should be shown in the last few 
             messages before the login prompt.
             <br>
             Using the terminal (boot to the command line or open a Terminal window from the desktop), simply type ...
             <br>
-            
             <pre>
               hostname -I 
-            </pre>>
-            
+            </pre>
             Which will reveal your Pi's IP address.
+            <br>
+          </p>
+          <h3><b>Connecting Headless (no display)</b></h3>
+          <p>
+            This is the documentation from the Raspberry Pi Foundation and you have a number of options...
+            <br>
+            <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">IP for a Headless Raspberry Pi</a>
             <br>
           </p>
           <hr />
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h3><b>Connecting to the Raspberry Pi using SSH</b></h3>
+          <p>
+            We will be connecting to the Raspberry Pi using the remote SSH capability of Visual Studio Code that we installed 
+            as part of our development toolchain. When you set the RPi up, we enabled the device to connect to our Wifi network. 
+          </p>
+          <p>
+            Now we want to find the IP address of our RPi and connect to via VS Code's Remote SSH tools. This will let us 
+            develop our code and test our application working remotely connected to the device.
+          </p>
+          <p>
+            Here is the documentation on the extension for VS Code...
+            <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development</a>
+          </p>
+          <p>
+            Here is how we will connect to the Raspberry Pi...
+            <br>
+            <a href="https://code.visualstudio.com/remote-tutorials/ssh/getting-started">Remote development over SSH</a>
+          </p>
+          <hr />
+        </div>
+      </div>
       
     </div>
 
