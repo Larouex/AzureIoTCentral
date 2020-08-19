@@ -1,5 +1,0 @@
-pip
-wheel
-setuptools 
-virtualenv
-RPi.GPIO
